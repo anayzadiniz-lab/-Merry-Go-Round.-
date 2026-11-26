@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7 Voltas — Merry Go Round</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <!-- Tela inicial para liberar o áudio no navegador -->
+  <div id="start-screen" class="overlay">
+    <div class="intro-box">
+      <h1>Merry Go Round</h1>
+      <p>7 voltas no mesmo lugar. 7 emoções diferentes.</p>
+      <button id="start-btn">Iniciar o Carrossel</button>
+    </div>
+  </div>
+
+  <!-- Interface Principal -->
+  <main class="container">
+    <header class="hud-top">
+      <span id="lap-counter">Volta 1 de 7</span>
+      <h2 id="emotion-title">O Começo do Dia</h2>
+    </header>
+
+    <!-- Palco do Carrossel 3D -->
+    <div class="scene">
+      <div class="carousel" id="carousel">
+        <div class="panel" style="--i:0;"><span>01</span><p>Calma</p></div>
+        <div class="panel" style="--i:1;"><span>02</span><p>Pressa</p></div>
+        <div class="panel" style="--i:2;"><span>03</span><p>Dúvida</p></div>
+        <div class="panel" style="--i:3;"><span>04</span><p>Euforia</p></div>
+        <div class="panel" style="--i:4;"><span>05</span><p>Nostalgia</p></div>
+        <div class="panel" style="--i:5;"><span>06</span><p>Cansaço</p></div>
+        <div class="panel" style="--i:6;"><span>07</span><p>Esperança</p></div>
+      </div>
+    </div>
+
+    <footer class="hud-bottom">
+      <p id="reflection-text">"Às vezes parece que estamos girando sem sair do lugar..."</p>
+      <p id="music-name" class="music-tag">🎵 Tocando: Faixa 01</p>
+    </footer>
+  </main>
+
+  <!-- Player de áudio oculto -->
+  <audio id="audio-player"></audio>
+
+  <script src="script.js"></script>
+</body>
+          </html>
+  
