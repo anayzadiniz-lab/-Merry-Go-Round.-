@@ -8,7 +8,6 @@ const musicName = document.getElementById('music-name');
 const audioPlayer = document.getElementById('audio-player');
 const panelVideos = document.querySelectorAll('.panel-video');
 
-// Configure cada volta: música, trecho inicial (em segundos) e duração do pedacinho (em segundos)
 const lapsData = [
   {
     title: "Volta 1: O Despertar",
@@ -75,21 +74,14 @@ let speed = 0.4;
 let isRunning = false;
 let clipTimer = null;
 
-// Faz o mesmo vídeo de ondas parecer em sequência entre os 7 blocos
-function syncSequentialVideos() {
-  panelVideos.forEach((video, index) => {
-    const offset = index * 0.5;
-    const applyOffset = () => {
-      if (video.duration && isFinite(video.duration)) {
-        video.currentTime = offset % video.duration;
-      }
-      video.play().catch(() => {});
-    };
-
-    if (video.readyState >= 1) {
-      applyOffset();
-    } else {
-      video.addEventListener('loadedmetadata', applyOffset, { once: true });
+function startAllVideos() {
+  panelVideos.forEach((video) => {
+    video.muted = true;
+    video.playsInline = true;
+    video.loop = true;
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {});
     }
   });
 }
@@ -161,8 +153,9 @@ function animate() {
 startBtn.addEventListener('click', () => {
   startScreen.style.display = 'none';
   isRunning = true;
-  syncSequentialVideos();
+  startAllVideos();
   updateLapUI(0);
   animate();
 });
-    
+  
+  
