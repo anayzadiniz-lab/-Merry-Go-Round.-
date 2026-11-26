@@ -112,4 +112,4 @@ startBtn.addEventListener('click', () => {
   updateLapUI(0);
   animate();
 });
-  
+
