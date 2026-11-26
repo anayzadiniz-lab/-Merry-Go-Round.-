@@ -12,24 +12,24 @@ body {
   justify-content: center;
   align-items: center;
   color: #fff;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: linear-gradient(135deg, #0b132b, #1c2541);
   transition: background 2.5s ease;
 }
 
 /* Temas de cor para cada uma das 7 voltas */
-body.lap-1 { background: linear-gradient(135deg, #1f244b, #3a3f7a); }
-body.lap-2 { background: linear-gradient(135deg, #2b5876, #4e4376); }
-body.lap-3 { background: linear-gradient(135deg, #4b3869, #86588c); }
-body.lap-4 { background: linear-gradient(135deg, #b85d6f, #e08e79); }
-body.lap-5 { background: linear-gradient(135deg, #6a3093, #a044ff); }
-body.lap-6 { background: linear-gradient(135deg, #141e30, #243b55); }
-body.lap-7 { background: linear-gradient(135deg, #0f2027, #2c5364); }
+body.lap-1 { background: linear-gradient(135deg, #0b132b, #1d3557); }
+body.lap-2 { background: linear-gradient(135deg, #102542, #274c77); }
+body.lap-3 { background: linear-gradient(135deg, #1a2238, #2d3a6e); }
+body.lap-4 { background: linear-gradient(135deg, #162447, #1f4068); }
+body.lap-5 { background: linear-gradient(135deg, #0f172a, #1e3a8a); }
+body.lap-6 { background: linear-gradient(135deg, #090d16, #172554); }
+body.lap-7 { background: linear-gradient(135deg, #0c192c, #1e40af); }
 
 /* Tela Inicial */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(10, 10, 20, 0.92);
+  background: rgba(8, 12, 24, 0.94);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,15 +54,16 @@ button {
   font-size: 1rem;
   border: none;
   border-radius: 30px;
-  background: #e08e79;
-  color: #111;
+  background: #3b82f6;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background 0.2s;
 }
 
 button:hover {
   transform: scale(1.05);
+  background: #2563eb;
 }
 
 /* Estrutura Principal */
@@ -73,7 +74,7 @@ button:hover {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 20px;
+  padding: 35px 20px;
   text-align: center;
 }
 
@@ -93,14 +94,15 @@ button:hover {
 .scene {
   width: 180px;
   height: 240px;
-  perspective: 1000px; /* Cria a profundidade 3D */
+  perspective: 1000px;
+  margin-top: 30px;
 }
 
 .carousel {
   width: 100%;
   height: 100%;
   position: relative;
-  transform-style: preserve-3d; /* Mantém os filhos no espaço 3D */
+  transform-style: preserve-3d;
 }
 
 /* Os 7 painéis ao redor do eixo */
@@ -110,28 +112,91 @@ button:hover {
   height: 220px;
   left: 10px;
   top: 10px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(15, 23, 42, 0.55);
+  border: 1.5px solid rgba(147, 197, 253, 0.55);
   border-radius: 16px;
   backdrop-filter: blur(6px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  /* 360 graus / 7 painéis = 51.428 graus por painel */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   transform: rotateY(calc(var(--i) * 51.428deg)) translateZ(240px);
 }
 
-.panel span {
-  font-size: 2rem;
-  font-weight: bold;
-  opacity: 0.4;
-  margin-bottom: 10px;
+/* Cavalo e haste no topo do bloco */
+.horse-top {
+  position: absolute;
+  top: -54px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
 
-.panel p {
+.pole {
+  position: absolute;
+  width: 3px;
+  height: 54px;
+  background: linear-gradient(to bottom, #93c5fd, #3b82f6);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.7);
+}
+
+.horse-svg {
+  width: 42px;
+  height: 42px;
+  color: #eff6ff;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6));
+  z-index: 2;
+  animation: gallop 2.4s ease-in-out infinite;
+}
+
+.panel:nth-child(even) .horse-svg {
+  animation-delay: -1.2s;
+}
+
+@keyframes gallop {
+  0%, 100% { transform: translateY(-4px) rotate(-3deg); }
+  50% { transform: translateY(6px) rotate(3deg); }
+}
+
+/* Vídeo de ondas sonoras dentro do bloco */
+.panel-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+/* Número e palavra sobrepostos ao vídeo */
+.panel-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.panel-content span {
+  font-size: 2.2rem;
+  font-weight: bold;
+  opacity: 0.95;
+  margin-bottom: 6px;
+}
+
+.panel-content p {
   font-size: 1.1rem;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
@@ -148,6 +213,6 @@ button:hover {
 
 .music-tag {
   font-size: 0.85rem;
-  opacity: 0.7;
-}
-
+  opacity: 0.75;
+  }
+  
