@@ -198,9 +198,10 @@ button:hover {
   opacity: 0.8;
   }
 
-.hud-top,
-.hud-bottom {
-  display: none;
+.hud-top {
+  display: none !important;
+  visibility: hidden !important;
 }
+
 
 
