@@ -23,7 +23,7 @@ body {
 }
 
 /* 7 fundos diferentes sem azul (tons quentes, âmbar, vinho, pêssego e ameixa) */
-body.lap-1 { background: linear-gradient(135deg, #0D858F, #1299A4); }
+body.lap-1 { background: linear-gradient(135deg, #00ced1, #000000); }
 body.lap-2 { background: linear-gradient(135deg, #1C282E, #A1AFBA); }
 body.lap-3 { background: linear-gradient(135deg, #DCDCDC, #F5F5F5); }
 body.lap-4 { background: linear-gradient(135deg, #BF00FF, #800080); }
