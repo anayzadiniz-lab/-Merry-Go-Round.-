@@ -121,7 +121,7 @@ button:hover {
   background: rgba(28, 15, 20, 0.55);
   border: 1.5px solid rgba(253, 230, 138, 0.45);
   border-radius: 16px;
-  overflow: visible;
+  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   transform: rotateY(calc(var(--i) * 51.428deg)) translateZ(240px);
 }
@@ -168,19 +168,21 @@ button:hover {
   50% { transform: translateY(6px) rotate(3deg); }
 }
 
-/* Vídeo rodando dentro de cada bloco */
-.panel-video {
+/* Foto dentro de cada bloco */
+.panel-photo {
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
   border-radius: 14px;
   display: block;
 }
 
-/* Leve variação de ritmo visual entre os blocos sem travar o vídeo */
-.panel:nth-child(3n + 1) .panel-video { filter: brightness(1) contrast(1.05); }
-.panel:nth-child(3n + 2) .panel-video { filter: brightness(0.95) contrast(1.12); }
-.panel:nth-child(3n) .panel-video { filter: brightness(1.05) contrast(1); }
+/* Leve variação de ritmo visual entre os blocos */
+.panel:nth-child(3n + 1) .panel-photo { filter: brightness(1) contrast(1.05); }
+.panel:nth-child(3n + 2) .panel-photo { filter: brightness(0.95) contrast(1.12); }
+.panel:nth-child(3n) .panel-photo { filter: brightness(1.05) contrast(1); }
 
 .hud-bottom {
   max-width: 500px;
