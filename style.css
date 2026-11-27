@@ -121,7 +121,7 @@ button:hover {
   background: rgba(28, 15, 20, 0.55);
   border: 1.5px solid rgba(253, 230, 138, 0.45);
   border-radius: 16px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   transform: rotateY(calc(var(--i) * 51.428deg)) translateZ(240px);
 }
