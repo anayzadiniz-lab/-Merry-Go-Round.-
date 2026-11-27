@@ -10,13 +10,18 @@
 
   <!-- Tela inicial para liberar o áudio no navegador -->
   <div id="start-screen" class="overlay">
+    <div class="intro-box">
       <h1>Merry Go Round</h1>
+      <p>7 voltas no mesmo lugar. 7 emoções diferentes.</p>
       <button id="start-btn">Iniciar o Carrossel</button>
     </div>
   </div>
 
   <!-- Interface Principal -->
   <main class="container">
+    <header class="hud-top">
+      <span id="lap-counter">Volta 1 de 7</span>
+      <h2 id="emotion-title">O Começo do Dia</h2>
     </header>
 
     <!-- Palco do Carrossel 3D -->
@@ -98,5 +103,4 @@
   <audio id="audio-player"></audio>
   <script src="script.js"></script>
 </body>
-            </html>
-  
+  </html>
