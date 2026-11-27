@@ -23,13 +23,13 @@ body {
 }
 
 /* 7 fundos diferentes sem azul (tons quentes, âmbar, vinho, pêssego e ameixa) */
-body.lap-1 { background: linear-gradient(135deg, #00ced1, #000000); }
-body.lap-2 { background: linear-gradient(135deg, #1C282E, #A1AFBA); }
-body.lap-3 { background: linear-gradient(135deg, #DCDCDC, #F5F5F5); }
-body.lap-4 { background: linear-gradient(135deg, #BF00FF, #800080); }
-body.lap-5 { background: linear-gradient(135deg, #f8f8ff, #f0f8ff); }
-body.lap-6 { background: linear-gradient(135deg, #B6D673, #D3F776); }
-body.lap-7 { background: linear-gradient(135deg, #FFA500, #FFC637); }
+body.lap-1 { background: linear-gradient(135deg, #2B1419, #2B1419); }
+body.lap-2 { background: linear-gradient(135deg, #2B1419, #2B1419); }
+body.lap-3 { background: linear-gradient(135deg, #2B1419, #2B1419); }
+body.lap-4 { background: linear-gradient(135deg, #2B1419, #2B1419); }
+body.lap-5 { background: linear-gradient(135deg, #2B1419, #2B1419); }
+body.lap-6 { background: linear-gradient(135deg, #2B1419, #2B1419); }
+body.lap-7 { background: linear-gradient(135deg, #2B1419, #2B1419); }
 
 /* Tela Inicial */
 .overlay {
